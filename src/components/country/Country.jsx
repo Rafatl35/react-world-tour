@@ -1,11 +1,16 @@
 import './country.css'
-const Country = ({country}) => {
+const Country = ({ country }) => {
     console.log(country)
-    const {name, flags} = country;
+    const { name, flags, population, region
+    } = country;
     return (
         <div className='country'>
-            <h3>Name: {name?.common}</h3>
             <img src={flags.png} alt="" />
+            <h3>Name: {name?.common}</h3>
+            <p>Population: {population}</p>
+            <p>Region
+                : {region
+                }</p>
         </div>
     );
 };
