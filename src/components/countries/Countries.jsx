@@ -14,16 +14,19 @@ const Countries = () => {
     }, [])
 
     const handleVisitedCountries = country =>{
-        console.log('add this to your visited country')
-        console.log(country);
+        console.log('add this to your visited country');
+       const newVisitedCountries = [...visitedCountries, country];
+        setvisitedCountries(newVisitedCountries);
     }
     return (
         <div>
             <h3>Countries: {countries.length}</h3>
             <div>
-                <h5>Visited Countries</h5>
+                <h5>Visited Countries:{visitedCountries.length}</h5>
                 <ul>
-                    
+                    {
+                        visitedCountries.map(country => <p key={country.cca3}>{country.name.common}</p> )
+                    }
                 </ul>
             </div>
             <div className="country-container">

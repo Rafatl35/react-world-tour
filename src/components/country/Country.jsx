@@ -5,9 +5,12 @@ const Country = ({ country, handleVisitedCountries }) => {
     const { name, flags, population, region, cca3} = country;
 
     const [visited, setVisited] = useState(false);
+
     const handleVisited = ()=>{
         setVisited(!visited);
     }
+     
+    const passWithParams = () => handleVisitedCountries(country);
 
     console.log(handleVisitedCountries)
 
@@ -18,7 +21,7 @@ const Country = ({ country, handleVisitedCountries }) => {
             <p>Population: {population}</p>
             <p>Region: {region}</p>
             <p><small>Code: {cca3}</small></p>
-            <button>Mark Visited</button><br />
+            <button onClick={passWithParams}>Mark Visited</button><br />
             <button onClick={handleVisited}>{visited? 'Visited': 'Going'}</button><br />
             {visited ? 'I have visited this country.': 'I want to visit this country'}
 
